@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "./components/Header";
 
 export default function App() {
   const [message, setMessage] = useState("");
@@ -49,9 +50,9 @@ export default function App() {
 
   return (
     <main>
-      <p className="header--title">AI Chatbot</p>
+      <Header />
 
-      <div>
+      <div className="chat--container">
         {chats && chats.length
           ? chats.map((chat, index) => (
               <p

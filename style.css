@@ -1,14 +1,17 @@
 :root {
   --text: #060307;
   --background: #f5edf8;
-  --primary-button: #602d71;
-  --secondary-button: #eddef2;
-  --accent: #51265f;
+  --user--message: #3c61dd;
+  --assistant--message: #020509;
+  /* #fcfdfe assis
+  user #385bcc */
 }
 
 * {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
 html,
@@ -18,21 +21,31 @@ body {
   color: var(--text);
 }
 
+main {
+  width: 50%;
+  margin: 5vh auto;
+  background-color: blue;
+  height: 80vh;
+  padding: 10px;
+}
+
+.header--container {
+  display: flex;
+  justify-content: space-between;
+  background-color: red;
+  align-items: center;
+}
+
 .header--title {
-  font-size: 3.2em;
+  font-size: 2em;
   line-height: 1.1;
   text-align: center;
   position: sticky;
   top: 0;
 }
 
-main {
-  max-width: 800px;
-  margin: auto;
-}
-
 .chat--message {
-  background-color: var(--secondary-button);
+  background-color: var(--assistant--message);
   max-width: 70%;
   padding: 15px;
   border-radius: 15px;
@@ -41,7 +54,7 @@ main {
 
 .user--input {
   text-align: right;
-  background-color: var(--primary-button);
+  background-color: var(--user--message);
   margin-left: 30%;
   color: var(--background);
   display: flex;
@@ -60,10 +73,10 @@ form {
 }
 
 input {
-  width: 100%;
+  width: 95%;
   height: 40px;
   border-radius: 40px;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--user--message);
   padding: 10px;
   font-size: 1.2rem;
   background-color: var(--background);
