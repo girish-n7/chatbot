@@ -1,0 +1,74 @@
+:root {
+  --text: #060307;
+  --background: #f5edf8;
+  --primary-button: #602d71;
+  --secondary-button: #eddef2;
+  --accent: #51265f;
+}
+
+* {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.header--title {
+  font-size: 3.2em;
+  line-height: 1.1;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+}
+
+.chat--message {
+  background-color: var(--secondary-button);
+  max-width: 70%;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: justify;
+}
+
+.user--input {
+  text-align: right;
+  background-color: var(--primary-button);
+  margin-left: 30%;
+  color: var(--background);
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.hide {
+  visibility: hidden;
+  display: none;
+}
+
+form {
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid var(--accent);
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: var(--background);
+}
+
+input:focus {
+  outline: none;
+}
