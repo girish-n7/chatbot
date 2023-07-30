@@ -86,7 +86,7 @@ export default function Chat() {
             onChange={handleChange}
           />
         </form>
-        <button type="submit" className="input--button">
+        <button onClick={handleSubmit} className="input--button">
           <img src={sendButton} alt="" className="button--img"></img>
         </button>
       </div>

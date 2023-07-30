@@ -1,6 +1,5 @@
 * {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -68,14 +67,14 @@ main {
   background-color: var(--assistant--message);
   color: var(--text--ai);
   max-width: 70%;
-  margin: 10px 0;
+  margin: 15px 0;
   padding: 15px;
   border-radius: 15px;
-  text-align: justify;
+  font-size: 1rem;
+  line-height: 150%;
 }
 
 .user--input {
-  text-align: right;
   background-color: var(--user--message);
   margin-left: auto;
   width: fit-content;
