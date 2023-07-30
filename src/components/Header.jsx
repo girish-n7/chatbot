@@ -19,15 +19,14 @@ export default function Header() {
     theme.setProperty(
       "--background",
       darkTheme
-        ? "linear-gradient(#010205,#162f5b)"
-        : "linear-gradient(#fdfeff, #d4e1f8)"
+        ? "radial-gradient(ellipse at bottom, #162f5b 0%, #010205 70%)"
+        : "radial-gradient(ellipse at bottom, #d4e1f8 0%, #fdfeff 70%)"
     );
     theme.setProperty("--user--message", darkTheme ? "#3c61dd" : "#385bcc");
     theme.setProperty(
       "--assistant--message",
       darkTheme ? "#020509" : "#fcfdfe"
     );
-    theme.setProperty("--input--style", darkTheme ? "#040913" : "#e6e9f1");
   });
 
   return (
@@ -37,7 +36,7 @@ export default function Header() {
           src={darkTheme ? logoWhite : logoBlack}
           className="header--logo"
         ></img>
-        <p className="header--title">BATMAN</p>
+        <p className="header--title">Batbot</p>
       </div>
       <img
         src={darkTheme ? light : dark}

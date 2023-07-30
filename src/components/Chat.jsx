@@ -1,8 +1,15 @@
 import { useState } from "react";
+import sendButton from "../assets/sendButton.svg";
 
 export default function Chat() {
   const [message, setMessage] = useState("");
-  const [chats, setChats] = useState([]);
+  const [chats, setChats] = useState([
+    {
+      role: "assistant",
+      content:
+        "Welcome to the Batbot, where the shadows of artificial intelligence converge with the enigmatic persona of Gotham's Dark Knight. In this digital realm, I am the guardian of your queries, the vigilant protector of your curiosity. Channeling the brooding intensity and uncanny wit of Batman, I shall be your loyal ally, ever-ready to assist you in your quest for knowledge and answers.",
+    },
+  ]);
   const [isTyping, setIsTyping] = useState(false);
 
   function handleSubmit(event) {
@@ -65,19 +72,24 @@ export default function Chat() {
 
       <div className={isTyping ? "typing--status" : "hide"}>
         <p>
-          <i>{isTyping ? "Typing..." : ""}</i>
+          <i>{isTyping ? "Thinking..." : ""}</i>
         </p>
       </div>
 
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="message"
-          value={message}
-          placeholder="Ask anything."
-          onChange={handleChange}
-        />
-      </form>
+      <div className="input--container">
+        <form action="" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="message"
+            value={message}
+            placeholder="Ask anything."
+            onChange={handleChange}
+          />
+        </form>
+        <button type="submit" className="input--button">
+          <img src={sendButton} alt="" className="button--img"></img>
+        </button>
+      </div>
     </div>
   );
 }
