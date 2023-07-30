@@ -1,52 +1,70 @@
-:root {
-  --text: #060307;
-  --background: #f5edf8;
-  --user--message: #3c61dd;
-  --assistant--message: #020509;
-  /* #fcfdfe assis
-  user #385bcc */
-}
-
 * {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
-html,
 body {
-  scroll-behavior: smooth;
-  background-color: var(--background);
-  color: var(--text);
+  background-image: var(--background);
 }
 
 main {
-  width: 50%;
-  margin: 5vh auto;
-  background-color: blue;
-  height: 80vh;
-  padding: 10px;
+  background-image: var(--background);
+  background-repeat: no-repeat;
+  width: 60%;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+/* header */
+
 .header--container {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
-  background-color: red;
   align-items: center;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--assistant--message);
+  color: var(--text--ai);
+}
+
+.header--head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header--logo {
+  height: 2.6rem;
 }
 
 .header--title {
-  font-size: 2em;
+  font-size: 1.6rem;
   line-height: 1.1;
   text-align: center;
   position: sticky;
   top: 0;
 }
 
+.icon--theme {
+  height: 1.6rem;
+}
+
+/* chat */
+
 .chat--message {
   background-color: var(--assistant--message);
+  color: var(--text--ai);
   max-width: 70%;
+  margin: 10px;
   padding: 15px;
   border-radius: 15px;
   text-align: justify;
@@ -55,10 +73,15 @@ main {
 .user--input {
   text-align: right;
   background-color: var(--user--message);
-  margin-left: 30%;
-  color: var(--background);
-  display: flex;
-  flex-direction: row-reverse;
+  margin-left: auto;
+  width: fit-content;
+  max-width: 50%;
+  color: var(--text--user);
+}
+
+.typing--status {
+  margin: 10px;
+  padding: 0 10px;
 }
 
 .hide {
@@ -73,15 +96,24 @@ form {
 }
 
 input {
-  width: 95%;
+  margin-bottom: 20px;
+  width: 90%;
   height: 40px;
   border-radius: 40px;
-  border: 1px solid var(--user--message);
-  padding: 10px;
-  font-size: 1.2rem;
-  background-color: var(--background);
+  border: 1px solid rgba(128, 128, 128, 0.451);
+  padding: 5px 15px;
+  background-color: var(--input--style);
+  color: var(--text--ai);
 }
 
 input:focus {
   outline: none;
+  border: 1px solid grey;
+}
+
+/* media queries */
+@media screen and (max-width: 620px) {
+  main {
+    width: 100%;
+  }
 }
