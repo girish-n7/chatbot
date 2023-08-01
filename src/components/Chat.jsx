@@ -1,5 +1,6 @@
 import { useState } from "react";
 import sendButton from "../assets/sendButton.svg";
+import { FetchAPI } from "./FetchAPI";
 
 export default function Chat() {
   const [message, setMessage] = useState("");
@@ -33,16 +34,7 @@ export default function Chat() {
     setMessage(""); //after pushing into the array, set messages array to ""
 
     // call the backend service api
-
-    fetch("http://localhost:3000/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        chats,
-      }),
-    })
+    FetchAPI(chats)
       .then((response) => response.json())
       .then((data) => {
         messages.push(data.output); //push the new message i.e, data into the messages array
