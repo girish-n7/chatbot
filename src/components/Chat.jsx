@@ -13,14 +13,6 @@ export default function Chat() {
   ]);
   const [isTyping, setIsTyping] = useState(false);
 
-  function handleSubmit(event) {
-    return chat(event, message); //calls the chat function
-  }
-
-  function handleChange(event) {
-    return setMessage(event.target.value); //sets the message state to user typed message (on every keystroke)
-  }
-
   const chat = async (event, message) => {
     event.preventDefault(); //prevents site from resetting after submit
 
@@ -45,6 +37,7 @@ export default function Chat() {
         console.log(error);
       });
   };
+
   return (
     <div className="chat--container">
       <div>
@@ -69,16 +62,19 @@ export default function Chat() {
       </div>
 
       <div className="input--container">
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" onSubmit={(event) => chat(event, message)}>
           <input
             type="text"
             name="message"
             value={message}
             placeholder="Ask anything."
-            onChange={handleChange}
+            onChange={(event) => setMessage(event.target.value)}
           />
         </form>
-        <button onClick={handleSubmit} className="input--button">
+        <button
+          onClick={(event) => chat(event, message)}
+          className="input--button"
+        >
           <img src={sendButton} alt="" className="button--img"></img>
         </button>
       </div>
