@@ -7,10 +7,12 @@ import dark from "../assets/darkMode.svg";
 export default function Header() {
   const [darkTheme, setDarkTheme] = useState(true);
 
+  //change theme
   function handleClick() {
     setDarkTheme((prevState) => !prevState);
   }
 
+  //set the color palette based on theme
   const theme = document.querySelector(":root").style;
 
   useEffect(() => {
@@ -27,6 +29,7 @@ export default function Header() {
       "--assistant--message",
       darkTheme ? "#020509" : "#fcfdfe"
     );
+    theme.setProperty("--sidebar", darkTheme ? "#162f5b" : "#d4e1f8");
   });
 
   return (

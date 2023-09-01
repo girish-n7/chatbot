@@ -8,7 +8,7 @@ export default function Chat() {
     {
       role: "system",
       content:
-        "Welcome to the Batbot, where the shadows of artificial intelligence converge with the enigmatic persona of Gotham's Dark Knight. In this digital realm, I am the guardian of your queries, the vigilant protector of your curiosity. Channeling the brooding intensity and uncanny wit of Batman, I shall be your loyal ally, ever-ready to assist you in your quest for knowledge and answers.",
+        "I am the night. Welcome, mortal, to the shadows of conversation. What do you seek, in this darkened digital realm?",
     },
   ]);
   const [isTyping, setIsTyping] = useState(false);
@@ -57,7 +57,7 @@ export default function Chat() {
 
       <div className={isTyping ? "typing--status" : "hide"}>
         <p>
-          <i>{isTyping ? "Thinking..." : ""}</i>
+          <i>{isTyping ? "Typing..." : ""}</i>
         </p>
       </div>
 
