@@ -1,16 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import sendButton from "../assets/sendButton.svg";
 import FetchAPI from "./FetchAPI";
 
-export default function Chat() {
+export default function Chat({ chats, setChats }) {
   const [message, setMessage] = useState("");
-  const [chats, setChats] = useState([
-    {
-      role: "system",
-      content:
-        "I am the night. Welcome, mortal, to the shadows of conversation. What do you seek, in this darkened digital realm?",
-    },
-  ]);
   const [isTyping, setIsTyping] = useState(false);
 
   const chat = async (event, message) => {
