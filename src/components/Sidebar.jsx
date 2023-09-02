@@ -6,7 +6,7 @@ export default function Sidebar({ clearChat }) {
   const sidebarButtons = [
     { name: "Home", route: "/", clear: false },
     { name: "Chat", route: "/chat", clear: false },
-    { name: "Clear chat", route: "/chat", clear: true },
+    { name: "Clear Chat", route: "/chat", clear: true },
     { name: "Contact", route: "/contact", clear: false },
   ];
 

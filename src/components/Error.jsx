@@ -14,3 +14,5 @@ export default function Error() {
     </div>
   );
 }
+
+//home container style reused

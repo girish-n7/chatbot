@@ -96,6 +96,39 @@ body {
   cursor: pointer;
 }
 
+.header--icons__container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon--menu {
+  height: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+.header--menu {
+  display: none;
+}
+
+.header--menu a {
+  width: 100%;
+}
+
+.menu--buttons {
+  width: 100%;
+  margin: 5px auto;
+  padding: 3px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transform: 0.2s;
+  background-color: var(--assistant--message);
+  color: var(--text--ai);
+  border: 1px solid var(--user--message);
+}
+
 /* home */
 
 .home--container {
@@ -113,6 +146,7 @@ body {
   width: 100%;
   background-color: var(--assistant--message);
   color: var(--text--ai);
+  border: 1px solid var(--user--message);
   padding: 20px 50px;
   border-radius: 10px;
   box-shadow: 0 0 10px 1px var(--user--message);
@@ -252,5 +286,23 @@ input:focus {
 
   .sidebar--container {
     display: none;
+  }
+
+  .icon--menu {
+    display: block;
+  }
+
+  .header--menu {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--assistant--message);
+    box-shadow: 1px 1px 2px 0px var(--user--message);
+    border: 1px solid var(--user--message);
+    padding: 10px 30px;
+    border-radius: 10px;
   }
 }

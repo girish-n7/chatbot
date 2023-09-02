@@ -24,7 +24,7 @@ export default function App() {
     <main>
       <Sidebar clearChat={clearChat} />
       <div className="main--chat">
-        <Header />
+        <Header clearChat={clearChat} />
         <SwitchPage chats={chats} setChats={setChats} />
       </div>
     </main>

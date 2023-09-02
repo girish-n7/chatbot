@@ -31,3 +31,5 @@ export default function Contact() {
     </div>
   );
 }
+
+//home container style reused
